@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Asset Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Laptop Asset Management</h1>
+            <div class="flex space-x-4">
+                <button class="hover:bg-blue-700 px-3 py-2 rounded">Dashboard</button>
+                <button class="hover:bg-blue-700 px-3 py-2 rounded">Assets</button>
+                <button class="hover:bg-blue-700 px-3 py-2 rounded">Users</button>
+                <button class="hover:bg-blue-700 px-3 py-2 rounded">Reports</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Overview -->
+    <div class="container mx-auto mt-8 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <!-- Stats Cards -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-gray-500 text-sm">Total Laptops</h3>
+                <p class="text-3xl font-bold">245</p>
+                <p class="text-green-500">↑ 12% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-gray-500 text-sm">Available</h3>
+                <p class="text-3xl font-bold">82</p>
+                <p class="text-blue-500">33% of total</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-gray-500 text-sm">Assigned</h3>
+                <p class="text-3xl font-bold">163</p>
+                <p class="text-blue-500">67% of total</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-gray-500 text-sm">Maintenance Due</h3>
+                <p class="text-3xl font-bold text-red-500">12</p>
+                <p class="text-red-500">Requires attention</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Asset List -->
+            <div class="w-full md:w-2/3">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold">Asset Inventory</h2>
+                        <div class="flex space-x-2">
+                            <input type="text" placeholder="Search assets..." 
+                                   class="border rounded px-3 py-2 w-64">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded">
+                                Add New
+                            </button>
+                        </div>
+                    </div>
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Asset ID</th>
+                                <th class="px-4 py-2 text-left">Model</th>
+                                <th class="px-4 py-2 text-left">Status</th>
+                                <th class="px-4 py-2 text-left">Assigned To</th>
+                                <th class="px-4 py-2 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t">
+                                <td class="px-4 py-3">LAP-2024-001</td>
+                                <td class="px-4 py-3">ThinkPad X1</td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded">
+                                        Active
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">John Doe</td>
+                                <td class="px-4 py-3">
+                                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-800">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- More rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Side Panel -->
+            <div class="w-full md:w-1/3">
+                <!-- Maintenance Schedule -->
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-4">Upcoming Maintenance</h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <p class="font-semibold">LAP-2024-003</p>
+                            <p class="text-sm text-gray-600">Due: Jan 15, 2024</p>
+                        </div>
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <p class="font-semibold">LAP-2024-012</p>
+                            <p class="text-sm text-gray-600">Overdue: Dec 28, 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">Recent Activities</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded">
+                                <i class="fas fa-laptop text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">New Asset Added</p>
+                                <p class="text-sm text-gray-600">ThinkPad X1 Carbon</p>
+                                <p class="text-xs text-gray-500">2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 p-2 rounded">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Maintenance Completed</p>
+                                <p class="text-sm text-gray-600">LAP-2024-008</p>
+                                <p class="text-xs text-gray-500">5 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
